@@ -59,6 +59,9 @@ app.post("/delete", (req, res) => {
   res.redirect("/");
 });
 
-app.listen(8000, () => {
-  console.log("Listening to port 8000");
+let port = process.env.PORT;
+if(port == null || port == "")
+  port = 8000;
+app.listen(port, () => {
+  console.log("Server has started");
 });
